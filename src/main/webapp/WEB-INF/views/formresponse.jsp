@@ -11,8 +11,8 @@
     <title>Thank you!</title>
 </head>
 <body>
-Thank you for submiting your info!<br>
-${name}<br>
-${email}<br>
+Welcome ${firstName}. Thank you for submitting your info.<br>
+<br>
+<%--We will contact you at ${email}<br>--%>
 </body>
 </html>

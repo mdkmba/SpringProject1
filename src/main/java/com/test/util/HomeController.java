@@ -5,36 +5,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.management.monitor.MonitorSettingException;
-
 @Controller
 public class HomeController {
 
     @RequestMapping("/")
 
-    public ModelAndView helloWorld()
-    {
-        return new
-                ModelAndView("welcome","message","Hello World");
+    public ModelAndView helloWorld() {
+        return new ModelAndView("welcome", "message", "Welcome To Our Shop");
     }
 
     @RequestMapping("/userform")
 
-    public ModelAndView userform(){
+    public ModelAndView userform() {
 
-            return new ModelAndView("form","inst","Please enter info: ");
+        return new ModelAndView("form", "instructions", "Please enter info: ");
     }
 
     @RequestMapping("/formhandler")
     public ModelAndView formhandler(
-            @RequestParam("name") String name,
-            @RequestParam("email") String email
-    ){
+            @RequestParam("firstName") String firstName,
+            @RequestParam("lastName") String lastName,
+            @RequestParam("email") String email,
+            @RequestParam("phoneNumber") String phoneNumber,
+            @RequestParam("loginId") String loginId,
+            @RequestParam("passWord") String passWord
+    ) {
 
-        ModelAndView mv = new ModelAndView(("formresponse");
 
-
+        ModelAndView mv = new ModelAndView("formresponse");
+        mv.addObject("firstName", firstName);
+        mv.addObject("lastName", lastName);
+        mv.addObject("email", email);
         return mv;
-    }
 
+    }
 }

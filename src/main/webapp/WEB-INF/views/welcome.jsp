@@ -4,11 +4,13 @@
 
     <title>Welcome!</title>
 
+
+
 </head>
 <body>
-${message}
-
-<a href="userform".Go to the user form</body</html></a>
+<center><h1> ${message} </h1></center>
+<br><br><br>
+<center> <h2><a href="userform"> Please register here.</a></h2></center>
 
 </body>
 </html>
